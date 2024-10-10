@@ -8,6 +8,7 @@ const boardContainer = document.querySelector(".board");
 document.addEventListener('swiped-up', function(e) {
     console.log(e.target);
 });
+
 function display() {
     let elem = 0;
     for (let row = 0; row < 4; row++) {
@@ -28,6 +29,7 @@ function display() {
         }
     }
 }
+
 function assignRandom() {
     let row = Math.floor(Math.random() * 4)
     let col = Math.floor(Math.random() * 4)
@@ -65,6 +67,7 @@ window.addEventListener('keyup', (e) => {
     assignRandom()
     display()
 })
+
 function changeColor(row, col) {
     let value = board[row][col];
     return `hsla(220, ${(100/12)*(Math.log2(value))}%, ${100-Math.log2(value)*12}%,${100-Math.log2(value)/12}%)`;
